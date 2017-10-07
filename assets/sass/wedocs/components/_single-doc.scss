@@ -1,0 +1,42 @@
+.wedocs-single-content {
+
+	&.has-sidebar {
+		display: flex;
+		
+		.hentry, .sidebar {
+		    position: relative;
+			width: 100%;
+			min-height: 1px;
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+
+		.hentry {
+			-ms-flex: 0 0 66.666667%;
+    		flex: 0 0 66.666667%;
+			max-width: 66.666667%;
+		}
+
+		.sidebar {
+			-ms-flex: 0 0 33.333333%;
+    		flex: 0 0 33.333333%;
+    		max-width: 33.333333%;
+		}
+	}
+
+	.entry-content {
+		> h2 {
+			border-bottom: 1px solid #e9ecef;
+			line-height: 1.653em;
+		}
+
+		img {
+			border: 1px solid #e6e6e6;
+			border-radius: 5px;
+			-webkit-box-shadow: 0 0 0 2px #f3f3f3;
+			-moz-box-shadow: 0 0 0 2px #f3f3f3;
+			box-shadow: 0 0 0 2px #f3f3f3;
+			padding: 5px;
+		}
+	}
+}

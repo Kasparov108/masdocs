@@ -1,0 +1,40 @@
+.docs-subcategories {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		border-top: 1px solid #edf6fc;
+    	border-bottom: 1px solid #edf6fc;
+	    margin-top: -1px;
+        padding: 15px 0;
+
+        &.has-children {
+    		h4::before {
+    			content: "\f114";
+    		}
+        }
+
+        h4 {
+        	margin: 0;
+        	display: flex;
+        	align-items: center;
+
+        	&:before {
+	    		@include fa-icon();
+	    		width: 1.758em;
+				content: "\f0f6";
+	    	}
+
+        	a {
+        		display: flex;
+        		justify-content: space-between;
+        		width: 100%;
+
+        		&:hover, &:active, &:focus {
+        			text-decoration: none;
+        		}
+        	}
+        }
+	}
+}

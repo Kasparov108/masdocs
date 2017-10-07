@@ -1,0 +1,35 @@
+.masdocs-featured-item {
+	text-align: center;
+	margin-bottom: 1.1em;
+
+	.masdocs-featured-item-link {
+		display: block;
+
+		&:hover, &:focus, &:active {
+			text-decoration: none;
+		}
+	}
+
+	.masdocs-featured-item-image {
+		border: 1px solid #eaeaea;
+		border-top-width: 20px;
+		margin-bottom: 1em;
+		position: relative;
+		border-top-left-radius: 2px;
+		border-top-right-radius: 2px;
+
+		&::before {
+			content: "\f111 \0020 \f111 \0020 \f111";
+			color: #c4c4c4;
+			display: inline-block;
+		    font: normal normal normal 14px/1 FontAwesome;
+		    font-size: 8px;
+		    text-rendering: auto;
+		    -webkit-font-smoothing: antialiased;
+		    -moz-osx-font-smoothing: grayscale;
+		    position: absolute;
+		    top: -14px;
+		    left: 5px;
+		}
+	}
+}

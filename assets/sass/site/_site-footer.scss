@@ -1,0 +1,26 @@
+.site-footer {
+	font-size: 90%;
+
+	.copyright {
+		margin: 0;
+	}
+
+	.footer-links {
+		margin-right: -1rem;
+
+		.nav-link {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+
+	a {
+	    font-weight: 500;
+    	color: #868e96;
+
+    	&:hover, &:active, &:focus {
+    		color: #007bff;
+    		text-decoration: none;
+    	}
+	}
+}
