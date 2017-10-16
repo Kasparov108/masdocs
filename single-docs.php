@@ -56,11 +56,12 @@ get_header(); ?>
 
                         <?php masdocs_list_docs_subcategories(); ?>
 
-                        <!--<footer class="entry-footer wedocs-entry-footer">
+                        <?php if ( masdocs_has_sidebar() ) : ?>
+
+                        <footer class="entry-footer wedocs-entry-footer bg-light text-center p-3">
                             <?php if ( wedocs_get_option( 'email', 'wedocs_settings', 'on' ) == 'on' ): ?>
                                 <span class="wedocs-help-link wedocs-hide-print wedocs-hide-mobile">
-                                    <i class="wedocs-icon wedocs-icon-envelope"></i>
-                                    <?php printf( '%s <a id="wedocs-stuck-modal" href="%s">%s</a>', __( 'Still stuck?', 'wedocs' ), '#', __( 'How can we help?', 'wedocs' ) ); ?>
+                                    <?php printf( '%s <a class="btn btn-primary" rel="no-follow" href="%s">%s</a>', __( 'Not quite what you are looking for ?', 'wedocs' ), 'https://madrasthemes.freshdesk.com/', __( 'Get Help', 'wedocs' ) ); ?>
                                 </span>
                             <?php endif; ?>
 
@@ -70,17 +71,9 @@ get_header(); ?>
                             </div>
 
                             <meta itemprop="datePublished" content="<?php echo get_the_time( 'c' ); ?>"/>
-                            <time itemprop="dateModified" datetime="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>"><?php printf( __( 'Updated on %s', 'wedocs' ), get_the_modified_date() ); ?></time>
-                        </footer> -->
+                            <time class="d-none" itemprop="dateModified" datetime="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>"><?php printf( __( 'Updated on %s', 'wedocs' ), get_the_modified_date() ); ?></time>
+                        </footer>
 
-                        <?php //wedocs_doc_nav(); ?>
-
-                        <?php if ( wedocs_get_option( 'helpful', 'wedocs_settings', 'on' ) == 'on' ): ?>
-                            <?php //wedocs_get_template_part( 'content', 'feedback' ); ?>
-                        <?php endif; ?>
-
-                        <?php if ( wedocs_get_option( 'email', 'wedocs_settings', 'on' ) == 'on' ): ?>
-                            <?php //wedocs_get_template_part( 'content', 'modal' ); ?>
                         <?php endif; ?>
 
                     </article><!-- #post-## -->
@@ -88,7 +81,12 @@ get_header(); ?>
                     <?php if ( masdocs_has_sidebar() ) : ?>
 
                     <div class="sidebar">
-                        <div id="table-of-contents" class="bg-light"><h6><?php echo esc_html__( 'Table of Contents', 'wedocs' ); ?></h6><hr/></div>
+                        <?php 
+                        /**
+                         * @hooked masdocs_table_of_contents - 10
+                         */
+                        do_action( 'masdocs_sidebar' ); ?>
+
                     </div>
 
                     <?php endif; ?>

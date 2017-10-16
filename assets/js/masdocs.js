@@ -10,13 +10,20 @@ anchors.options = {
 	placement: 'left'
 }
 anchors.add( '.wedocs-single-content .entry-content > h2, .wedocs-single-content .entry-content > h3, .wedocs-single-content .entry-content > h4');
-generateTableOfContents( anchors.elements );
-//TableOfContents( 'table-of-contents', 'entry-content' );
+
+if ( anchors.elements.length > 0 ) {
+	generateTableOfContents( anchors.elements );
+}
 
 function generateTableOfContents( els ) {
 	var toc = document.getElementById( 'table-of-contents' ),
 		prevLevel = 0,
 		root, curr;
+
+	if ( toc.classList.contains( 'd-none' ) ) {
+		toc.classList.remove( 'd-none' );
+		toc.classList.add( 'd-block' );
+	}
 
 	var closeLevel = function( e, levels ) {
 		for (var i = 0; i < levels && e.parentElement && e.parentElement.parentElement; i++) {

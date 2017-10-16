@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: MadrasThemes
 Author URI: https://docs.madrasthemes.com/
 Description: Theme for Madras Themes Documentation Website
-Version: 1.0.1
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: masdocs
@@ -93,6 +93,15 @@ a:hover, a:focus, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+.navbar-dark .navbar-nav .current-menu-parent > .nav-link,
+.navbar-dark .navbar-nav .nav-link.current-menu-parent,
+.navbar-dark .navbar-nav .current-docs-ancestor > .nav-link,
+.navbar-dark .navbar-nav .nav-link.current-docs-ancestor {
+  color: #fff; }
+
+.navbar-nav .dropdown-toggle::after {
+  content: none; }
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/

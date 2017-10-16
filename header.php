@@ -42,12 +42,19 @@
 	<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
 		<div class="container">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="navbar-brand">MadrasThemes Docs</a>
-			<ul class="navbar-nav">
-				<li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">Plugins</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">Themes</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">Support</a></li>
-			</ul>
+			<?php
+	            wp_nav_menu( array(
+	                'menu'              => 'primary',
+	                'theme_location'    => 'primary',
+	                'depth'             => 2,
+	                'container'         => false,
+	                'container_class'   => 'collapse navbar-collapse',
+	                'container_id'      => 'bs-example-navbar-collapse-1',
+	                'menu_class'        => 'nav navbar-nav',
+	                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+	                'walker'            => new WP_Bootstrap_Navwalker()
+	            ) );
+	        ?>
 		</div>
 	</nav>
 

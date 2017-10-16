@@ -2,6 +2,7 @@
 	background-color: #edf6fc;
     padding: 25px;
     border-radius: 0.3rem;
+    margin-bottom: 2em;
 
     ol, ul {
     	margin: 0 0 1.758rem;
@@ -14,10 +15,13 @@
 
     > ol > li li a {
     	font-weight: 400;
+        padding: 2px 0;
     }
 
     > ol > li a {
     	font-weight: 600;
+        display: block;
+        padding: 4px 0;
 
     	&:hover, &:active, &:focus {
     		text-decoration: none;
@@ -29,6 +33,10 @@
         font-size: 14px;
         color: #999;
         line-height: 24px;
+
+        li {
+            margin-left: 10px;
+        }
     }
 
     li ul,

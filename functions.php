@@ -176,6 +176,7 @@ if ( class_exists( 'WeDocs' ) ) {
 	require get_template_directory() . '/inc/wedocs/masdocs-wedocs-template-hooks.php';
 }
 
-require get_template_directory() . '/inc/class-masdocs-shortcodes.php';
+require get_template_directory() . '/inc/classes/class-masdocs-shortcodes.php';
+require get_template_directory() . '/inc/classes/class-wp-bootstrap-navwalker.php';
 
 add_action( 'init', array( 'Masdocs_Shortcodes', 'init' ) );

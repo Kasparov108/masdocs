@@ -1,0 +1,10 @@
+.navbar-dark .navbar-nav .current-menu-parent>.nav-link, 
+.navbar-dark .navbar-nav .nav-link.current-menu-parent,
+.navbar-dark .navbar-nav .current-docs-ancestor>.nav-link, 
+.navbar-dark .navbar-nav .nav-link.current-docs-ancestor {
+	color: #fff;
+}
+
+.navbar-nav .dropdown-toggle::after {
+	content: none;
+}

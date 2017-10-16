@@ -11,7 +11,8 @@
 .docs-subcategories {
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+  margin-bottom: 2em; }
   .docs-subcategories li {
     border-top: 1px solid #edf6fc;
     border-bottom: 1px solid #edf6fc;
@@ -50,11 +51,18 @@
   .wedocs-single-content.has-sidebar .hentry {
     -ms-flex: 0 0 66.666667%;
     flex: 0 0 66.666667%;
-    max-width: 66.666667%; }
+    max-width: 66.666667%;
+    			/*-ms-flex: 0 0 75%;
+        		flex: 0 0 75%;
+    			max-width: 75%;*/
+    border-right: 1px solid #edf6fc; }
   .wedocs-single-content.has-sidebar .sidebar {
     -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
-    max-width: 33.333333%; }
+    max-width: 33.333333%;
+    /*-ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;*/ }
 .wedocs-single-content .entry-content > h2 {
   border-bottom: 1px solid #e9ecef;
   line-height: 1.653em; }
@@ -72,16 +80,20 @@
 #table-of-contents {
   background-color: #edf6fc;
   padding: 25px;
-  border-radius: 0.3rem; }
+  border-radius: 0.3rem;
+  margin-bottom: 2em; }
   #table-of-contents ol, #table-of-contents ul {
     margin: 0 0 1.758rem;
     padding: 0; }
   #table-of-contents > ol {
     margin-bottom: 0; }
   #table-of-contents > ol > li li a {
-    font-weight: 400; }
+    font-weight: 400;
+    padding: 2px 0; }
   #table-of-contents > ol > li a {
-    font-weight: 600; }
+    font-weight: 600;
+    display: block;
+    padding: 4px 0; }
     #table-of-contents > ol > li a:hover, #table-of-contents > ol > li a:active, #table-of-contents > ol > li a:focus {
       text-decoration: none; }
   #table-of-contents li {
@@ -89,9 +101,29 @@
     font-size: 14px;
     color: #999;
     line-height: 24px; }
+    #table-of-contents li li {
+      margin-left: 10px; }
   #table-of-contents li ul,
   #table-of-contents li ol {
     margin: .41em 0 .64em 0; }
+
+.sibling-navigation {
+  margin-bottom: 2em; }
+  .sibling-navigation h4 {
+    margin-bottom: 1.2em; }
+  .sibling-navigation .list-sibling-pages {
+    margin-left: -15px; }
+    .sibling-navigation .list-sibling-pages > li a {
+      display: block;
+      font-size: 14px;
+      padding: 10px 15px;
+      border-bottom: 1px solid #edf6fc;
+      border-top: 1px solid #edf6fc;
+      margin-top: -1px;
+      font-weight: 500; }
+    .sibling-navigation .list-sibling-pages > li.current_page_item a {
+      color: #212529;
+      background-color: #f8f9fa; }
 
 .heading-search {
   margin-bottom: 50px; }
@@ -100,8 +132,14 @@
   .heading-search .form-row, .heading-search .form-group {
     margin-bottom: 0; }
 
-.entry-footer {
+.wedocs-doc-nav {
+  border-top: 1px solid #edf6fc;
   display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 14px; }
+
+.entry-footer {
   margin: 1.2em 0; }
 
 .masdocs-featured-item {

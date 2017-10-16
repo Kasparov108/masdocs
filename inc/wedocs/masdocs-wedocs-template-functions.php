@@ -58,7 +58,7 @@ if ( ! function_exists( 'masdocs_heading_search' ) ) {
             $dropdown_args['selected'] = (int) $_GET['search_in_doc'];
         }
 
-        ?><div class="heading-search bg-light border border-left-0 border-right-0 border-top-0 p-4">
+        ?><div class="heading-search bg-light border border-left-0 border-right-0 border-top-0 p-5">
             <div class="container">
                 <form role="search" method="get" class="form-heading-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <div class="form-row justify-content-md-center">
@@ -76,6 +76,30 @@ if ( ! function_exists( 'masdocs_heading_search' ) ) {
                     </div>
                 </form>
             </div>
+        </div><?php
+    }
+}
+
+if ( ! function_exists( 'masdocs_table_of_contents' ) ) {
+    function masdocs_table_of_contents() {
+        ?><div id="table-of-contents" class="bg-light d-none"><h6><?php echo esc_html__( 'Table of Contents', 'wedocs' ); ?></h6><hr/></div><?php
+    }
+}
+
+if ( ! function_exists( 'masdocs_sibling_docs' ) ) {
+    function masdocs_sibling_docs() {
+        global $post;
+
+        $list_pages_args = array(
+            'title_li'  => '',
+            'order'     => 'menu_order',
+            'child_of'  => $post->post_parent, 
+            'post_type' => 'docs'
+        );
+
+        ?><div class="sibling-navigation">
+            <h4><?php echo sprintf( esc_html__( 'Topics in %s', 'masdocs' ), get_the_title( $post->post_parent ) ); ?></h4>
+            <ul class="list-sibling-pages list-unstyled"><?php wp_list_pages( $list_pages_args ); ?></ul>
         </div><?php
     }
 }
