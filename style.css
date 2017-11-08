@@ -226,6 +226,9 @@ a:hover, a:focus, a:active {
 .bypostauthor {
   display: block; }
 
+.site-content {
+  min-height: 65vh; }
+
 .site-footer {
   font-size: 90%; }
   .site-footer .copyright {

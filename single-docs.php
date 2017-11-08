@@ -19,7 +19,7 @@ get_header(); ?>
 
                 <?php masdocs_wedocs_breadcrumb(); ?>
 
-                <div class="wedocs-single-content <?php if ( masdocs_has_sidebar() ) : ?>has-sidebar row<?php endif; ?>">
+                <div class="wedocs-single-content has-sidebar row">
 
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/Article">
                         <header class="entry-header">
@@ -56,8 +56,6 @@ get_header(); ?>
 
                         <?php masdocs_list_docs_subcategories(); ?>
 
-                        <?php if ( masdocs_has_sidebar() ) : ?>
-
                         <footer class="entry-footer wedocs-entry-footer bg-light text-center p-3">
                             <?php if ( wedocs_get_option( 'email', 'wedocs_settings', 'on' ) == 'on' ): ?>
                                 <span class="wedocs-help-link wedocs-hide-print wedocs-hide-mobile">
@@ -74,11 +72,7 @@ get_header(); ?>
                             <time class="d-none" itemprop="dateModified" datetime="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>"><?php printf( __( 'Updated on %s', 'wedocs' ), get_the_modified_date() ); ?></time>
                         </footer>
 
-                        <?php endif; ?>
-
                     </article><!-- #post-## -->
-                    
-                    <?php if ( masdocs_has_sidebar() ) : ?>
 
                     <div class="sidebar">
                         <?php 
@@ -88,8 +82,6 @@ get_header(); ?>
                         do_action( 'masdocs_sidebar' ); ?>
 
                     </div>
-
-                    <?php endif; ?>
 
                 </div><!-- .wedocs-single-content -->
             </div><!-- .wedocs-single-wrap -->

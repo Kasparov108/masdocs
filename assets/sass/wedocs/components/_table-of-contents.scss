@@ -1,5 +1,4 @@
 #table-of-contents {
-	background-color: #edf6fc;
     padding: 25px;
     border-radius: 0.3rem;
     margin-bottom: 2em;
@@ -19,7 +18,7 @@
     }
 
     > ol > li a {
-    	font-weight: 600;
+    	font-weight: 400;
         display: block;
         padding: 4px 0;
 
@@ -42,5 +41,53 @@
     li ul,
     li ol {
     	margin: .41em 0 .64em 0;
+    }
+
+    .children {
+        display: none;
+    }
+
+    .child-indicator {
+        &::after {
+            content: "\f107";
+            font-family: fontawesome;
+            display: inline-block;
+            margin-left: 15px;
+        }
+    }
+
+    li.current_page_ancestor,
+    li.current_page_item {
+        
+        > a {
+            font-weight: 600;
+        }
+
+        .children {
+            display: block;
+        }
+
+        .child-indicator::after {
+            content: "\f106";
+        }
+    }
+
+    .toggled.page_item_has_children {
+        &.current_page_ancestor .children,
+        &.current_page_item .children {
+            display: none;
+
+            .child-indicator::after {
+                content: "\f107";
+            }
+        }
+
+        .children {
+            display: block;
+        }
+
+        .child-indicator::after {
+            content: "\f106";
+        }
     }
 }

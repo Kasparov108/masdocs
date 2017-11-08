@@ -20,6 +20,8 @@ function generateTableOfContents( els ) {
 		prevLevel = 0,
 		root, curr;
 
+	return;
+
 	if ( toc.classList.contains( 'd-none' ) ) {
 		toc.classList.remove( 'd-none' );
 		toc.classList.add( 'd-block' );
@@ -111,4 +113,14 @@ function getListItem( href, text ) {
 			}
 		}
 	});
+
+  	$( '.page_item_has_children > a ' ).each( function() {
+  		$( this ).append( '<span class="child-indicator"></span>' );
+  	});
+
+  	$(document).on( 'click', '.child-indicator', function() {
+  		$(this).parents( '.page_item_has_children' ).toggleClass( 'toggled' );
+  		return false;
+  	});
+
 } )( jQuery );

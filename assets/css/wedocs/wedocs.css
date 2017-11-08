@@ -49,20 +49,14 @@
     padding-right: 15px;
     padding-left: 15px; }
   .wedocs-single-content.has-sidebar .hentry {
-    -ms-flex: 0 0 66.666667%;
-    flex: 0 0 66.666667%;
-    max-width: 66.666667%;
-    			/*-ms-flex: 0 0 75%;
-        		flex: 0 0 75%;
-    			max-width: 75%;*/
+    -ms-flex: 0 0 70%;
+    flex: 0 0 70%;
+    max-width: 70%;
     border-right: 1px solid #edf6fc; }
   .wedocs-single-content.has-sidebar .sidebar {
-    -ms-flex: 0 0 33.333333%;
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
-    /*-ms-flex: 0 0 25%;
-    flex: 0 0 25%;
-    max-width: 25%;*/ }
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 30%; }
 .wedocs-single-content .entry-content > h2 {
   border-bottom: 1px solid #e9ecef;
   line-height: 1.653em; }
@@ -78,7 +72,6 @@
   text-decoration: none; }
 
 #table-of-contents {
-  background-color: #edf6fc;
   padding: 25px;
   border-radius: 0.3rem;
   margin-bottom: 2em; }
@@ -91,7 +84,7 @@
     font-weight: 400;
     padding: 2px 0; }
   #table-of-contents > ol > li a {
-    font-weight: 600;
+    font-weight: 400;
     display: block;
     padding: 4px 0; }
     #table-of-contents > ol > li a:hover, #table-of-contents > ol > li a:active, #table-of-contents > ol > li a:focus {
@@ -106,6 +99,30 @@
   #table-of-contents li ul,
   #table-of-contents li ol {
     margin: .41em 0 .64em 0; }
+  #table-of-contents .children {
+    display: none; }
+  #table-of-contents .child-indicator::after {
+    content: "\f107";
+    font-family: fontawesome;
+    display: inline-block;
+    margin-left: 15px; }
+  #table-of-contents li.current_page_ancestor > a,
+  #table-of-contents li.current_page_item > a {
+    font-weight: 600; }
+  #table-of-contents li.current_page_ancestor .children,
+  #table-of-contents li.current_page_item .children {
+    display: block; }
+  #table-of-contents li.current_page_ancestor .child-indicator::after,
+  #table-of-contents li.current_page_item .child-indicator::after {
+    content: "\f106"; }
+  #table-of-contents .toggled.page_item_has_children.current_page_ancestor .children, #table-of-contents .toggled.page_item_has_children.current_page_item .children {
+    display: none; }
+    #table-of-contents .toggled.page_item_has_children.current_page_ancestor .children .child-indicator::after, #table-of-contents .toggled.page_item_has_children.current_page_item .children .child-indicator::after {
+      content: "\f107"; }
+  #table-of-contents .toggled.page_item_has_children .children {
+    display: block; }
+  #table-of-contents .toggled.page_item_has_children .child-indicator::after {
+    content: "\f106"; }
 
 .sibling-navigation {
   margin-bottom: 2em; }
