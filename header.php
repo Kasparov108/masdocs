@@ -20,7 +20,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> data-spy="scroll" data-target="#table-of-contents" data-offset="0" style="position:relative">
 <div id="page" class="site">
     <a class="skip-link sr-only screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'masdocs' ); ?></a>
     

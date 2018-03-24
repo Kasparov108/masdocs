@@ -18,19 +18,25 @@
         ul {
             @include list-unstyled();
 
-            a {
-                padding-left: 40px;
+            a.nav-link {
+                padding: 0 0 0 40px;
             }
         }
 
-        a {
+        a.nav-link {
             font-size: 12px;
             line-height: 1.5;
             font-weight: 500;
-            padding-left: 24px;
             margin-bottom: 8px;
             color: #74818D;
             display: block;
+            padding: 0 0 0 24px;
+            border-left: 2px solid transparent;
         }
+    }
+
+    a.nav-link.active {
+        border-left: 2px solid #007bff;
+        color: #007bff;
     }
 }

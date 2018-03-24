@@ -19,7 +19,7 @@ get_header(); ?>
 
                     <div class="wedocs-single-wrap">
 
-                        <div class="wedocs-single-content has-sidebar">
+                        <div id="wedocs-single-content" class="wedocs-single-content has-sidebar">
 
                             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/Article">
                                 <header class="entry-header">

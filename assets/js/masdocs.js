@@ -41,11 +41,13 @@ function generateTableOfContents( els ) {
 			anchoredElText = el.textContent,
 			anchoredElHref = el.querySelector('.anchorjs-link').getAttribute('href'),
 			li = getListItem( anchoredElHref, anchoredElText );
+			li.classList.add( 'nav-item' );
 
 		if ( curLevel > prevLevel ) {
 			if ( ! curr ) {
 				root = document.createElement( 'OL' );
 				root.appendChild( li ); 
+				root.classList.add( 'nav' );
 			} else {
 				var ul = document.createElement( 'UL' );
 				ul.appendChild( li );
@@ -70,6 +72,7 @@ function getListItem( href, text ) {
 		textNode   = document.createTextNode(text);
 
 	anchorItem.href = href;
+	anchorItem.classList.add( 'nav-link' );
 	anchorItem.appendChild( textNode );
 	listItem.appendChild( anchorItem );
 	return listItem;
