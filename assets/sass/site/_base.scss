@@ -2,3 +2,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.75em;
 }
+
+img {
+    @include img-fluid;
+}

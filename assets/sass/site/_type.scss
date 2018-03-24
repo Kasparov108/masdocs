@@ -4,6 +4,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 16px;
     line-height: 1.25;
     padding-bottom: 0.3em;
+    color: #333;
 }
 
 .entry-title {
@@ -12,6 +13,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry-content {
+
+    strong {
+        color: #333;
+    }
 
     strong, a {
         font-weight: 600;

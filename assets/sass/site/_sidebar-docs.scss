@@ -1,0 +1,28 @@
+.doc-nav-list {
+    @include list-unstyled();
+
+    a {
+        color: #242A31;
+        display: block;
+        padding: 5px 0;
+        font-size: 14px;
+    }
+
+    ul.children {
+        display: none;
+        list-style: none;
+        padding-left: 15px;
+
+        a {
+            color: #9BABB4;
+        }
+    }
+
+    .current_page_item ul.children {
+        display: block;
+    }
+
+    .child-indicator::after {
+        
+    }
+}

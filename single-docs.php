@@ -74,15 +74,6 @@ get_header(); ?>
 
                     </article><!-- #post-## -->
 
-                    <div class="sidebar">
-                        <?php 
-                        /**
-                         * @hooked masdocs_table_of_contents - 10
-                         */
-                        do_action( 'masdocs_sidebar' ); ?>
-
-                    </div>
-
                 </div><!-- .wedocs-single-content -->
             </div><!-- .wedocs-single-wrap -->
 
@@ -92,4 +83,24 @@ get_header(); ?>
 
 </div><!-- .content-area -->
 
-<?php get_footer(); ?>
+<div class="sidebar-area">
+<?php
+    
+    $walker = new WeDocs_Walker_Docs();
+    $children = wp_list_pages( array(
+        'title_li'  => '',
+        'order'     => 'menu_order',
+        'echo'      => false,
+        'post_type' => 'docs',
+        'walker'    => $walker
+    ) );
+    ?>
+
+    <?php if ($children) { ?>
+        <ul class="doc-nav-list">
+            <?php echo $children; ?>
+        </ul>
+    <?php } ?>
+</div>
+
+<?php get_footer();
