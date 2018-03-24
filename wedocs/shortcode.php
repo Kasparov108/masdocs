@@ -8,7 +8,9 @@
                     <a href="<?php echo get_permalink( $main_doc['doc']->ID ); ?>">
                         <?php echo $main_doc['doc']->post_title; ?>
                     </a>
-                    <span class="pull-right badge badge-secondary"><?php echo sprintf( esc_html__( '%s topics', 'masdocs' ), count( $main_doc['sections'] ) ); ?></span>
+                    <?php $total_topics = count( $main_doc['sections'] ); if ( $total_topics > 0 ) : ?>
+                    <span class="pull-right badge badge-secondary"><?php echo sprintf( _n( '%s topic', '%s topics', $total_topics,  'masdocs' ), $total_topics ); ?></span>
+                    <?php endif; ?>
                 </h3>
 
                 <?php if ( $main_doc['sections'] ) : $topics = 0;?>
