@@ -3,8 +3,7 @@
   padding-left: 0;
   border-radius: 0;
   border-bottom: 1px solid #edf6fc;
-  margin-bottom: 50px;
-  margin-top: -32px; }
+  margin-bottom: 50px; }
   .wedocs-breadcrumb.breadcrumb a:hover, .wedocs-breadcrumb.breadcrumb a:focus, .wedocs-breadcrumb.breadcrumb a:active {
     text-decoration: none; }
 
@@ -57,9 +56,11 @@
     -ms-flex: 0 0 30%;
     flex: 0 0 30%;
     max-width: 30%; }
+
 .wedocs-single-content .entry-content > h2 {
   border-bottom: 1px solid #e9ecef;
   line-height: 1.653em; }
+
 .wedocs-single-content .entry-content img {
   border: 1px solid #e6e6e6;
   border-radius: 5px;
@@ -115,9 +116,11 @@
   #table-of-contents li.current_page_ancestor .child-indicator::after,
   #table-of-contents li.current_page_item .child-indicator::after {
     content: "\f106"; }
-  #table-of-contents .toggled.page_item_has_children.current_page_ancestor .children, #table-of-contents .toggled.page_item_has_children.current_page_item .children {
+  #table-of-contents .toggled.page_item_has_children.current_page_ancestor .children,
+  #table-of-contents .toggled.page_item_has_children.current_page_item .children {
     display: none; }
-    #table-of-contents .toggled.page_item_has_children.current_page_ancestor .children .child-indicator::after, #table-of-contents .toggled.page_item_has_children.current_page_item .children .child-indicator::after {
+    #table-of-contents .toggled.page_item_has_children.current_page_ancestor .children .child-indicator::after,
+    #table-of-contents .toggled.page_item_has_children.current_page_item .children .child-indicator::after {
       content: "\f107"; }
   #table-of-contents .toggled.page_item_has_children .children {
     display: block; }
@@ -202,5 +205,3 @@
       position: absolute;
       top: -14px;
       left: 5px; }
-
-/*# sourceMappingURL=wedocs.css.map */

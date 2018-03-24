@@ -118,6 +118,7 @@ module.exports = function( grunt ) {
 			dist: {
 				files: [{
 					'style.css': 'assets/sass/style.scss',
+					'assets/css/wedocs/wedocs.css': 'assets/sass/wedocs/wedocs.scss'
 				}]
 			}
 		},
@@ -126,7 +127,7 @@ module.exports = function( grunt ) {
 		cssmin: {
 			main: {
 				files: {
-					'style.css': ['style.css']
+					'style.css': ['style.css'],
 				}
 			},
 			admin: {
