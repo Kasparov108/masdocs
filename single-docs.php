@@ -69,7 +69,7 @@ get_header(); ?>
                                     </div>
 
                                     <meta itemprop="datePublished" content="<?php echo get_the_time( 'c' ); ?>"/>
-                                    <time class="d-none" itemprop="dateModified" datetime="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>"><?php printf( __( 'Updated on %s', 'wedocs' ), get_the_modified_date() ); ?></time>
+                                    <time itemprop="dateModified" datetime="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>"><?php printf( __( 'Updated on %s', 'wedocs' ), get_the_modified_date() ); ?></time>
                                 </footer>
 
                             </article><!-- #post-## -->

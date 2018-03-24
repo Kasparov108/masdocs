@@ -16,10 +16,10 @@
 
     .navbar-brand {
         font-weight: 700;
-        color: #676767;
+        color: #000;
 
         @include hover-focus() {
-            color: #000;
+            color: #676767;
         }
     }
 
