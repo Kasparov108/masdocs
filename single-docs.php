@@ -12,7 +12,7 @@ $skip_sidebar = ( get_post_meta( $post->ID, 'skip_sidebar', true ) == 'yes' ) ? 
 get_header(); ?>
 
 <div id="primary" class="content-area">
-    <div class="content-area-inner">
+    <div class="content-area-inner has-site-aside">
         <main id="main" class="site-main" role="main">
             <div class="site-main-inner">
                 <?php while ( have_posts() ) : the_post(); ?>

@@ -15,17 +15,14 @@
         }
 
         .content-area {
-            -ms-flex-preferred-size: 0;
-            flex-basis: 0;
-            -webkit-box-flex: 1;
-            -ms-flex-positive: 1;
-            flex-grow: 1;
-            max-width: 100%;
+            flex: 0 0 calc( 100% - 270px );
+            max-width: calc( 100% - 270px );
             order: 1;
         }
 
         .sidebar-area {
             @include make-col(3);
+            flex: 0 0 270px;
             max-width: 270px;
             order: 0;
         }
@@ -35,8 +32,8 @@
         margin: 0 88px;
     }
 
-    .sidebar-area {
-        margin-left: calc( ( 100% - 738px) / 2 );
+    .site-content-inner {
+        padding-left: calc( ( 100% - 738px) / 2 );
     }
 
     .content-area-inner {
@@ -45,12 +42,15 @@
 
         .site-main {
             @include make-col-ready();
-            -ms-flex-preferred-size: 0;
-            flex-basis: 0;
-            -webkit-box-flex: 1;
-            -ms-flex-positive: 1;
-            flex-grow: 1;
+            flex: 0 0 100%;
             max-width: 100%;
+        }
+
+        &.has-site-aside {
+            .site-main {
+                flex: 0 0 calc( 100% - 200px );
+                max-width: calc( 100% - 220px );
+            }
         }
 
         .site-aside {
@@ -62,8 +62,8 @@
 }
 
 @include media-breakpoint-up(lg) {
-    .sidebar-area {
-        margin-left: calc( ( 100% - 962px) / 2 );
+    .site-content-inner {
+        padding-left: calc( ( 100% - 962px) / 2 );
     }
 
     .content-area-inner {
@@ -77,8 +77,8 @@
         padding: 0;
     }
 
-    .sidebar-area {
-        margin-left: calc( ( 100% - 1200px) / 2 );
+    .site-content-inner {
+        padding-left: calc( ( 100% - 1200px) / 2 );
     }
 
     .content-area-inner {
@@ -92,8 +92,8 @@
         padding: 0;
     }
 
-    .sidebar-area {
-        margin-left: calc( ( 100% - 1400px) / 2 );
+    .site-content-inner {
+        padding-left: calc( ( 100% - 1400px) / 2 );
     }
 
     .content-area-inner {

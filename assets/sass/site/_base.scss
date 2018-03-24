@@ -6,3 +6,7 @@ body {
 img {
     @include img-fluid;
 }
+
+.screen-reader-text {
+    @include sr-only();
+}
