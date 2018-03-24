@@ -1,5 +1,6 @@
 .doc-nav-list {
     @include list-unstyled();
+    margin-left: -10px;
 
     a {
         color: #242A31;
@@ -12,18 +13,46 @@
     ul.children {
         display: none;
         list-style: none;
-        padding-left: 15px;
+        padding-left: 30px;
 
         a {
             color: #9BABB4;
         }
     }
 
-    .current_page_item ul.children {
-        display: block;
+    .child-indicator {
+        display: none;
     }
 
-    .child-indicator::after {
+    .page_item_has_children {
+        &::before {
+            @include fa-icon();
+            content: "\f054";
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            float: left;
+            display: inline-block;
+            margin-right: 15px;
+            padding: 8.5px 0;
+            font-size: 12px;
+            line-height: 21px;
+            cursor: pointer;
+        }
+    }
 
+    .current_page_item, .current_page_ancestor {
+        ul.children {
+            display: block;
+        }
+
+        &.page_item_has_children {
+            &::before {
+                content: "\f078";
+            }
+        }
+
+        > a {
+            font-weight: 600;
+        }
     }
 }

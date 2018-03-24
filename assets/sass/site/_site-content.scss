@@ -6,6 +6,7 @@
 
 .site-content {
     background-color: #f5f7f9;
+    /*background-color: #e6ecf0;*/
 }
 
 .sidebar-area {
@@ -20,5 +21,92 @@
 .entry-content {
     > *:first-child {
         margin-top: 0;
+    }
+}
+
+.docs-subcategories, .wedocs-doc-sections {
+    @include list-unstyled();
+
+    > li {
+        border-top: 1px solid #edf6fc;
+        border-bottom: 1px solid #edf6fc;
+        margin-top: -1px;
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+
+    h4, > li > a {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        font-size: 1em;
+        padding: 1em 0;
+        font-weight: 600;
+        width: 100%;
+
+        &:before {
+            @include fa-icon();
+            width: 1.758em;
+            content: "\f15c";
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 400;
+            flex: 0 0 1.758em;
+        }
+    }
+
+    h4 {
+        a {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            &:hover, &:active, &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.wedocs-docs-list {
+    @include list-unstyled();
+    list-style-type: decimal;
+    list-style-position: inside;
+    @include make-row();
+
+    .wedocs-docs-single {
+        @include make-col-ready();
+        @include make-col(6);
+        color: #495057;
+        font-size: 1em;
+        font-weight: 700;
+        margin-bottom: 1em;
+
+    }
+
+    h3 {
+        display: inline-block;
+        width: 90%;
+    }
+
+    h3 a {
+        color: #495057;
+        font-size: 1em;
+        display: inline-block;
+    }
+}
+
+.wedocs-doc-sections {
+    margin-bottom: 0.5em;
+
+     > li > a {
+        color: #495057;
+        padding: 0.45em 0;
+        font-weight: 300;
+    }
+
+    > li:nth-child(n+5) {
+        display: none;
     }
 }

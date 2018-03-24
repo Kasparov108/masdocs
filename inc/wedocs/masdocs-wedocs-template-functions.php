@@ -37,7 +37,9 @@ if ( ! function_exists( 'masdocs_list_docs_subcategories' ) ) {
 
 		$output = '<ul class="docs-subcategories">' . $output . '</ul>';
 
-		echo $output;
+        $block_title = '<h4>' . esc_html__( 'Articles in this section', 'masdocs' ) . '</h4>';
+
+		echo '<div class="docs-subcategories-wrapper">' . wp_kses_post( $block_title . $output ) . '</div>';
 	}
 }
 
