@@ -29,6 +29,7 @@
             position: -webkit-sticky;
             top: 28px;
             height: calc( 100vh - 28px );
+            overflow-y: auto;
         }
     }
 
@@ -65,6 +66,7 @@
             position: -webkit-sticky;
             top: 28px;
             height: calc( 100vh - 28px );
+            overflow-y: auto;
         }
     }
 }
