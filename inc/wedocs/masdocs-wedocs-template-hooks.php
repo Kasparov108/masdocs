@@ -15,10 +15,10 @@ function masdocs_add_page_attr_to_args( $args ) {
 /**
  * Sidebar
  */
-//add_action( 'masdocs_sidebar', 'masdocs_table_of_contents', 10 );
+add_action( 'masdocs_sidebar', 'masdocs_table_of_contents', 10 );
 //add_action( 'masdocs_sidebar', 'masdocs_sibling_docs',      20 );
 
-add_action( 'masdocs_sidebar', 'masdocs_sidebar_nav', 10 );
+//add_action( 'masdocs_sidebar', 'masdocs_sidebar_nav', 10 );
 
 function masdocs_sidebar_nav() {
 	global $post;

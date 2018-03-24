@@ -37,13 +37,7 @@ module.exports = function( grunt ) {
 				jshintrc: '.jshintrc'
 			},
 			all: [
-				'Gruntfile.js',
-				'assets/js/*.js',
-				'!assets/js/*.min.js',
-				'assets/js/admin/*.js',
-				'!assets/js/admin/*.min.js',
-				'assets/js/woocommerce/*.js',
-				'!assets/js/woocommerce/*.min.js'
+				'Gruntfile.js'
 			]
 		},
 
@@ -127,7 +121,7 @@ module.exports = function( grunt ) {
 		cssmin: {
 			main: {
 				files: {
-					'style.css': ['style.css'],
+					'style.css': ['style.css']
 				}
 			},
 			admin: {

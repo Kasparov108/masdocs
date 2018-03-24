@@ -12,8 +12,7 @@ if ( ! function_exists( 'masdocs_list_docs_subcategories' ) ) {
 		$args = array(
 			'post_parent' => $post->ID,
 			'post_type'   => 'docs',
-			'orderby'     => 'menu_order',
-			'order'       => 'ASC'
+			'order'       => 'menu_order',
 		);
 
 		$children = get_children( $args );
@@ -84,7 +83,7 @@ if ( ! function_exists( 'masdocs_heading_search' ) ) {
 
 if ( ! function_exists( 'masdocs_table_of_contents' ) ) {
     function masdocs_table_of_contents() {
-        ?><div id="table-of-contents" class="bg-light d-none"><h6><?php echo esc_html__( 'Table of Contents', 'wedocs' ); ?></h6><hr/></div><?php
+        ?><div id="table-of-contents"><h6><?php echo esc_html__( 'Contents', 'masdocs' ); ?></h6></div><?php
     }
 }
 
