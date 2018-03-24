@@ -35,11 +35,11 @@ if ( ! function_exists( 'masdocs_list_docs_subcategories' ) ) {
 			$output .= '<li class="' . esc_attr( $classes ) . '"><h4><a href="' . get_permalink( $child->ID ) . '">' . get_the_title( $child->ID ) . $span_count . '</a></h4></li>';
 		}
 
-		$output = '<ul class="docs-subcategories">' . $output . '</ul>';
-
-        $block_title = '<h4>' . esc_html__( 'Articles in this section', 'masdocs' ) . '</h4>';
-
-		echo '<div class="docs-subcategories-wrapper">' . wp_kses_post( $block_title . $output ) . '</div>';
+        if ( ! empty( $output ) ) {
+            $output = '<ul class="docs-subcategories">' . $output . '</ul>';
+            $block_title = '<p>' . esc_html__( 'Here are the articles in this section', 'masdocs' ) . '</p>';
+            echo '<div class="docs-subcategories-wrapper">' . wp_kses_post( $block_title . $output ) . '</div>';
+        }
 	}
 }
 

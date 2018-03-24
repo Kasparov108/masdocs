@@ -119,7 +119,7 @@ function getListItem( href, text ) {
   	});
 
   	$(document).on( 'click', '.child-indicator', function() {
-  		$(this).parents( '.page_item_has_children' ).toggleClass( 'toggled' );
+  		$(this).parent().parent( '.page_item_has_children' ).toggleClass( 'toggled' );
   		return false;
   	});
 

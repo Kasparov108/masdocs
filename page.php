@@ -32,6 +32,24 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+	<div class="sidebar-area">
+<?php
+    
+    $walker = new WeDocs_Walker_Docs();
+    $children = wp_list_pages( array(
+        'title_li'  => '',
+        'order'     => 'menu_order',
+        'echo'      => false,
+        'post_type' => 'docs',
+        'walker'    => $walker
+    ) );
+    ?>
 
+    <?php if ($children) { ?>
+        <ul class="doc-nav-list">
+            <?php echo $children; ?>
+        </ul>
+    <?php } ?>
+</div>
 <?php
 get_footer();
