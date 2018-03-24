@@ -14,7 +14,7 @@
 		</div><!-- /.container -->
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer bg-light border border-left-0 border-right-0 border-bottom-0 p-3">
+	<?php if( 0 ): ?><footer id="colophon" class="site-footer bg-light border border-left-0 border-right-0 border-bottom-0 p-3">
 		<div class="container">
 			<div class="d-flex justify-content-between align-items-center text-muted">
 				<p class="copyright">&copy; <a href="https://themeforest.net/user/madrasthemes/portfolio">MadrasThemes</a> <?php echo date('Y'); ?></p>
@@ -25,7 +25,7 @@
 				</nav>
 			</div>
 		</div>
-	</footer><!-- #colophon -->
+	</footer><!-- #colophon --><?php endif; ?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

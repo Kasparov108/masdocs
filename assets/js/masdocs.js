@@ -123,9 +123,24 @@ function getListItem( href, text ) {
   		return false;
   	});
 
+  	$( document ).on( 'click', '.wedocs-doc-link > a', function() {
+  		var $this = $( this ), 
+  			docsSections = $this.parent().parent().find( '.wedocs-doc-sections' ),
+  			$docsSections = $( docsSections );
+  		
+  		$docsSections.toggleClass( 'toggled' );
+  		if ( $docsSections.hasClass( 'toggled' ) ) {
+  			$this.text( $this.data( 'toggledText' ) );
+  		} else {
+  			$this.text( $this.data( 'text' ) );
+  		}
+
+  		return false;
+  	});
+
   	$( document ).ready( function() {
   		$( '.current_page_item, .current_page_ancestor' ).each( function() {
-  			$(this).toggleClass( 'toggled' );
+  			$( this ).toggleClass( 'toggled' );
   		});
   	});
 
