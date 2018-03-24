@@ -118,7 +118,7 @@ module.exports = function( grunt ) {
 			dist: {
 				files: [{
 					'style.css': 'assets/sass/style.scss',
-					'assets/css/wedocs/wedocs.css': 'assets/sass/wedocs/wedocs.scss'
+					'assets/css/wedocs/wedocs.css': 'assets/sass/wedocs.scss'
 				}]
 			}
 		},

@@ -10,6 +10,7 @@
  */
 
 ?>
+			</div><!-- /.site-content-inner -->
 		</div><!-- /.container -->
 	</div><!-- #content -->
 

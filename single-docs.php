@@ -17,9 +17,9 @@ get_header(); ?>
 
             <div class="wedocs-single-wrap">
 
-                <?php masdocs_wedocs_breadcrumb(); ?>
+                <?php // masdocs_wedocs_breadcrumb(); ?>
 
-                <div class="wedocs-single-content has-sidebar row">
+                <div class="wedocs-single-content has-sidebar">
 
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/Article">
                         <header class="entry-header">

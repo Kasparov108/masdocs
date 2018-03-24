@@ -22,12 +22,14 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'masdocs' ); ?></a>
+    <a class="skip-link sr-only screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'masdocs' ); ?></a>
     
     <header id="masthead" class="site-header">
-        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg masdocs-navbar">
             <div class="container">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="navbar-brand">MadrasThemes Docs</a>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="navbar-brand">
+                    <?php echo get_bloginfo( 'name' ); ?>
+                </a>
                 <?php
                     wp_nav_menu( array(
                         'menu'              => 'primary',
@@ -47,3 +49,4 @@
 
     <div id="content" class="site-content">
         <div class="container">
+            <div class="site-content-inner">

@@ -127,7 +127,7 @@ function masdocs_scripts() {
 	wp_enqueue_style( 'font-awesome-css', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
 	wp_enqueue_style( 'masdocs-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'masdocs-wedocs-styles', get_template_directory_uri() . '/assets/css/wedocs/wedocs.css' );
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700' );
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900' );
 
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 	$suffix = '';
