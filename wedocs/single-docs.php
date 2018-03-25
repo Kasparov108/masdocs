@@ -56,20 +56,21 @@ get_header(); ?>
 
                                 <?php masdocs_list_docs_subcategories(); ?>
 
-                                <footer class="entry-footer wedocs-entry-footer bg-light text-center p-3">
-                                    <?php if ( wedocs_get_option( 'email', 'wedocs_settings', 'on' ) == 'on' ): ?>
-                                        <span class="wedocs-help-link wedocs-hide-print wedocs-hide-mobile">
-                                            <?php printf( '%s <a class="btn btn-primary" rel="no-follow" href="%s">%s</a>', __( 'Not quite what you are looking for ?', 'wedocs' ), 'https://madrasthemes.freshdesk.com/', __( 'Get Help', 'wedocs' ) ); ?>
-                                        </span>
-                                    <?php endif; ?>
+                                <?php //wedocs_doc_nav(); ?>
 
-                                    <div class="wedocs-article-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                                        <meta itemprop="name" content="<?php echo get_the_author(); ?>" />
-                                        <meta itemprop="url" content="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" />
+                                <footer class="entry-footer wedocs-entry-footer">
+                                    <div class="post-meta">
+                                        <div class="wedocs-article-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                            <meta itemprop="name" content="<?php echo get_the_author(); ?>" />
+                                            <meta itemprop="url" content="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" />
+                                        </div>
+
+                                        <meta itemprop="datePublished" content="<?php echo get_the_time( 'c' ); ?>"/>
+                                        <time itemprop="dateModified" datetime="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>"><?php printf( __( 'Updated on %s', 'wedocs' ), get_the_modified_date() ); ?></time>
                                     </div>
-
-                                    <meta itemprop="datePublished" content="<?php echo get_the_time( 'c' ); ?>"/>
-                                    <time itemprop="dateModified" datetime="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>"><?php printf( __( 'Updated on %s', 'wedocs' ), get_the_modified_date() ); ?></time>
+                                    <div class="wedocs-help-link wedocs-hide-print wedocs-hide-mobile">
+                                        <?php printf( '%s <a rel="no-follow" target="_blank" href="%s">%s</a>', __( 'Not quite what you are looking for ?', 'wedocs' ), 'https://madrasthemes.freshdesk.com/', __( 'Get Help', 'wedocs' ) ); ?>
+                                    </div>
                                 </footer>
 
                             </article><!-- #post-## -->
