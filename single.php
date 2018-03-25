@@ -35,6 +35,7 @@ get_header(); get_sidebar(); ?>
                         'prev_text' => '<span class="aside-title">Previous</span><span class="aside-link">%title</span>',
                         'next_text' => '<span class="aside-title">Next</span><span class="aside-link">%title</span>'
                     ) );
+                    masdocs_entry_meta();
                 ?>
                 </div>
             </div>

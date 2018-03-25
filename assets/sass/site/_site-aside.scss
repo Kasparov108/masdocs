@@ -2,7 +2,7 @@
     margin-left: -15px;
     border-left: 1px solid #F5F7F9;
 
-    .aside-title {
+    .aside-title, .meta-title {
         display: block;
         margin-top: 24px;
         margin-bottom: 16px;
@@ -12,7 +12,7 @@
         }
     }
 
-    .tag-cloud-link { 
+    .tag-cloud-link, .tags-links a, .cat-links a { 
         font-size: 12px !important; 
         color: #74818D;
         
@@ -30,7 +30,7 @@
         }
     }
 
-    a.nav-link, .aside-link, li > a, .tagcloud {
+    a.nav-link, .aside-link, li > a, .tagcloud, .tags-links, .cat-links {
         font-size: 12px !important;
         line-height: 1.5;
         font-weight: 500;
@@ -57,7 +57,7 @@
         color: #007bff;
     }
 
-    h6, .aside-title, .widgettitle {
+    h6, .aside-title, .widgettitle, .meta-title {
         font-size: 10px;
         line-height: 1;
         font-weight: 700;

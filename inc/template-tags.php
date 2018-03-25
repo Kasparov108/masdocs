@@ -28,79 +28,45 @@ if ( ! function_exists( 'masdocs_entry_footer' ) ) :
 			$posted_on = sprintf(
 				/* translators: %s: post date. */
 				esc_html_x( 'Updated on %s', 'post date', 'masdocs' ),
-				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+				$time_string
 			);
 		} else {
 			$posted_on = sprintf(
 				/* translators: %s: post date. */
 				esc_html_x( 'Posted on %s', 'post date', 'masdocs' ),
-				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+				$time_string
 			);
 		}
 
-		$author_link = '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" class="post-author" data-toggle="tooltip" data-placement="bottom" data-title="' . esc_attr( get_the_author() ) . '">'. esc_html( get_avatar( get_the_author_meta( 'ID' ), 32 ) ) . '</a>';
+		$author_link = '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" class="post-author">'. wp_kses_post( get_avatar( get_the_author_meta( 'ID' ), 32 ) ) . '  ' . esc_html( get_the_author() ) . '</a>';
 
-		echo '<span class="posted-on">' . $author_link . $posted_on .'</span><span class="byline"> ' . . '</span>'; // WPCS: XSS OK.
+		echo '<span class="byline">' . $author_link  . '</span><span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+
+		//echo masdocs_entry_meta();
 
 	}
 endif;
 
-if ( ! function_exists( 'masdocs_entry_footer_v1' ) ) :
+if ( ! function_exists( 'masdocs_entry_meta' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function masdocs_entry_footer_v1() {
+	function masdocs_entry_meta() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'masdocs' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'masdocs' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="meta-title">' . esc_html__( 'Posted in', 'masdocs' ) . '</span><span class="cat-links">' . esc_html__( '%1$s', 'masdocs' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'masdocs' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'masdocs' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="meta-title">' . esc_html__( 'Tagged', 'masdocs' ) . '</span><span class="tags-links">' . esc_html__( '%1$s', 'masdocs' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
-
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text sr-only"> on %s</span>', 'masdocs' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				)
-			);
-			echo '</span>';
-		}
-
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text sr-only">%s</span>', 'masdocs' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
 	}
 endif;
