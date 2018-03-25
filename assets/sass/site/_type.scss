@@ -7,10 +7,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #495057;
 }
 
-h1, h2 {
-    border-bottom: 1px solid #eaecef;
-}
-
 h1 {
     font-size: 2em;
 }
@@ -42,7 +38,10 @@ h6 {
 }
 
 .entry-content {
-
+    h1, h2 {
+        border-bottom: 1px solid #eaecef;
+    }
+    
     strong {
         color: #495057;
     }
