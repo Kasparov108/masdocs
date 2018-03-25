@@ -201,3 +201,7 @@ hr {
         border-radius: 50%;
     }
 }
+
+.published:not(.updated) {
+    display: none;
+}

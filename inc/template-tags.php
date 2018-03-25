@@ -24,19 +24,23 @@ if ( ! function_exists( 'masdocs_entry_footer' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'masdocs' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$posted_on = sprintf(
+				/* translators: %s: post date. */
+				esc_html_x( 'Updated on %s', 'post date', 'masdocs' ),
+				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			);
+		} else {
+			$posted_on = sprintf(
+				/* translators: %s: post date. */
+				esc_html_x( 'Posted on %s', 'post date', 'masdocs' ),
+				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			);
+		}
 
-		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'masdocs' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
+		$author_link = '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" class="post-author" data-toggle="tooltip" data-placement="bottom" data-title="' . esc_attr( get_the_author() ) . '">'. esc_html( get_avatar( get_the_author_meta( 'ID' ), 32 ) ) . '</a>';
 
-		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		echo '<span class="posted-on">' . $author_link . $posted_on .'</span><span class="byline"> ' . . '</span>'; // WPCS: XSS OK.
 
 	}
 endif;
