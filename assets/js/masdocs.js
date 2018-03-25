@@ -47,7 +47,7 @@ function generateTableOfContents( els ) {
 			if ( ! curr ) {
 				root = document.createElement( 'OL' );
 				root.appendChild( li ); 
-				root.classList.add( 'nav' );
+				root.classList.add( 'nav flex-column' );
 			} else {
 				var ul = document.createElement( 'UL' );
 				ul.appendChild( li );
