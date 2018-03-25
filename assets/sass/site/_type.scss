@@ -49,5 +49,16 @@ h6 {
     strong, a {
         font-weight: 600;
     }
+
+    h1, h2, h3, h4, h5, h6 {
+        a[data-toggle="collapse"] {
+            font-weight: 700;
+            color: #495057;
+
+            @include hover-focus() {
+                color: #007bff;
+            }
+        }
+    }
 }
 
