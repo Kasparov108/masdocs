@@ -12,7 +12,7 @@
  * @package masDocs
  */
 
-get_header(); ?>
+get_header(); get_sidebar(); ?>
 
     <div id="primary" class="content-area">
         <div class="content-area-inner">
@@ -35,5 +35,4 @@ get_header(); ?>
         </div><!-- /.content-area-inner -->
     </div><!-- #primary -->
 
-<?php
-get_sidebar(); get_footer();
+<?php get_footer();

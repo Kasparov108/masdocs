@@ -1,0 +1,98 @@
+.site-aside-inner {
+    margin-left: -15px;
+    border-left: 1px solid #F5F7F9;
+
+    .aside-title {
+        display: block;
+        margin-top: 24px;
+        margin-bottom: 16px;
+
+        @include hover-focus() {
+            text-decoration: none;
+        }
+    }
+
+    .tag-cloud-link { 
+        font-size: 12px !important; 
+        color: #74818D;
+        
+        &::after {
+            content: ', ';
+        }
+
+        &:last-child::after{
+            content: none;
+        }
+
+        @include hover-focus() {
+            color: #007bff;
+            text-decoration: none;
+        }
+    }
+
+    a.nav-link, .aside-link, li > a, .tagcloud {
+        font-size: 12px !important;
+        line-height: 1.5;
+        font-weight: 500;
+        margin-bottom: 8px;
+        color: #74818D;
+        display: block;
+        padding: 0 0 0 24px;
+        border-left: 2px solid transparent;
+
+        &.active {
+            border-left: 2px solid #007bff;
+            color: #007bff;
+        }
+
+        @include hover-focus() {
+            border-left: 2px solid #007bff;
+            color: #007bff;
+            text-decoration: none;
+        }
+    }
+
+    .current-cat > a {
+        border-left: 2px solid #007bff;
+        color: #007bff;
+    }
+
+    h6, .aside-title, .widgettitle {
+        font-size: 10px;
+        line-height: 1;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: #9DAAB6;
+        margin-left: 24px;
+    }
+
+    ol, ul {
+        @include list-unstyled();
+
+        ul {
+            @include list-unstyled();
+
+            a.nav-link, > li > a {
+                padding: 0 0 0 40px;
+            }
+
+            ul > li > a {
+                padding: 0 0 0 56px;
+            }
+
+            ul ul > li > a {
+                padding: 0 0 0 72px;
+            }
+        }
+    }
+}
+
+.site-aside {
+    .nav-previous a,
+    .nav-next a {
+        @include hover-focus() {
+            text-decoration: none;
+        }
+    }
+}

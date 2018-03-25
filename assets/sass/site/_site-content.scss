@@ -13,8 +13,17 @@
     padding-bottom: 4.5em;
 }
 
-.entry-title {
+.entry-title, .page-title {
     margin-top: 12px;
+
+    a {
+        color: #495057;
+        
+        @include hover-focus() {
+            color: #007bff;
+            text-decoration: none;
+        }
+    }
 }
 
 hr {
@@ -129,7 +138,7 @@ hr {
     }
 }
 
-.wedocs-entry-footer {
+.wedocs-entry-footer, .entry-footer {
     display: flex;
     justify-content: space-between;
     color: #9DAAB6;
@@ -142,7 +151,6 @@ hr {
     }
 }
 
-.post-navigation .nav-links,
 .wedocs-doc-nav {
     display: flex;
     justify-content: space-between;

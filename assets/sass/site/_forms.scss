@@ -1,0 +1,22 @@
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea,
+.input-text {
+    @include make-form-control();
+}
+
+button,
+input[type="submit"] {
+    @include make-button();
+    @include button-variant( $primary, $primary );
+}
+
+select {
+    @include make-form-control();
+    @include make-custom-select();
+}

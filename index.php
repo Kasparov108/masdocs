@@ -12,10 +12,10 @@
  * @package masDocs
  */
 
-get_header(); ?>
+get_header(); get_sidebar(); ?>
 
 	<div id="primary" class="content-area">
-		<div class="content-area-inner">
+		<div class="content-area-inner has-site-aside">
 			<main id="main" class="site-main">
 				<div class="site-main-inner">
 				<?php
@@ -51,9 +51,8 @@ get_header(); ?>
 				?>
 				</div><!-- /.site-main-inner -->
 			</main><!-- #main -->
+			<?php get_sidebar( 'blog' ); ?>
 		</div><!-- /.content-area-inner -->
 	</div><!-- #primary -->
 	
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer();

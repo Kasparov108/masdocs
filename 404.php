@@ -7,54 +7,30 @@
  * @package masDocs
  */
 
-get_header(); ?>
+get_header(); get_sidebar(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<div class="content-area-inner has-site-aside">
+			<main id="main" class="site-main">
+				<div class="site-main-inner">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'masdocs' ); ?></h1>
-				</header><!-- .page-header -->
+					<section class="error-404 not-found">
+						<header class="page-header">
+							<h1 class="page-title entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'masdocs' ); ?></h1>
+						</header><!-- .page-header -->
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'masdocs' ); ?></p>
+						<div class="page-content entry-content">
+							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'masdocs' ); ?></p>
 
-					<?php
-						get_search_form();
+							<?php get_search_form(); ?>
 
-						the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+						</div><!-- .page-content -->
+					</section><!-- .error-404 -->
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'masdocs' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'masdocs' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
+				</div><!-- /.site-main-inner -->
+			</main><!-- #main -->
+			<?php get_sidebar( 'blog' ); ?>
+		</div><!-- /.content-area-inner -->
 	</div><!-- #primary -->
 
-<?php
-get_footer();
+<?php get_footer();

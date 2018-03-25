@@ -83,7 +83,7 @@ if ( ! function_exists( 'masdocs_heading_search' ) ) {
 
 if ( ! function_exists( 'masdocs_table_of_contents' ) ) {
     function masdocs_table_of_contents() {
-        ?><div id="table-of-contents"><h6><?php echo esc_html__( 'Contents', 'masdocs' ); ?></h6></div><?php
+        ?><div id="table-of-contents" class="site-aside-inner"><h6><?php echo esc_html__( 'Contents', 'masdocs' ); ?></h6></div><?php
     }
 }
 

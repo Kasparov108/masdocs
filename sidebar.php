@@ -10,7 +10,8 @@
 
 <aside id="secondary" class="sidebar-area">
 <?php
-    
+    //get_search_form();
+
     $walker = new WeDocs_Walker_Docs();
     $children = wp_list_pages( array(
         'title_li'  => '',

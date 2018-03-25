@@ -7,31 +7,38 @@
  * @package masDocs
  */
 
-get_header(); ?>
+get_header(); get_sidebar(); ?>
 
-	<div id="primary" class="content-area">
-		<div class="content-area-inner">
-			<main id="main" class="site-main">
-				<div class="site-main-inner">
-				<?php
-					while ( have_posts() ) : the_post();
+    <div id="primary" class="content-area">
+        <div class="content-area-inner has-site-aside">
+            <main id="main" class="site-main">
+                <div class="site-main-inner">
+                <?php
+                    while ( have_posts() ) : the_post();
 
-						get_template_part( 'template-parts/content', get_post_type() );
+                        get_template_part( 'template-parts/content', get_post_type() );
 
-						the_post_navigation();
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if ( comments_open() || get_comments_number() ) :
+                            comments_template();
+                        endif;
 
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
+                    endwhile; // End of the loop.
+                ?>
+                </div>
+            </main><!-- #main -->
 
-					endwhile; // End of the loop.
-				?>
-				</div>
-			</main><!-- #main -->
-		</div><!-- /.content-area-inner -->
-	</div><!-- #primary -->
+            <div class="site-aside">
+                <div class="site-aside-inner">
+                <?php
+                    the_post_navigation( array(
+                        'prev_text' => '<span class="aside-title">Previous</span><span class="aside-link">%title</span>',
+                        'next_text' => '<span class="aside-title">Next</span><span class="aside-link">%title</span>'
+                    ) );
+                ?>
+                </div>
+            </div>
+        </div><!-- /.content-area-inner -->
+    </div><!-- #primary -->
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer();
