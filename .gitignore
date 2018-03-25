@@ -1,6 +1,3 @@
-# Compiled CSS
-*.css
-
 # Minified js
 *.min.js
 !/assets/js/vendor/*.min.js
