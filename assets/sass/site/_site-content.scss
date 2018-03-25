@@ -47,10 +47,6 @@ hr {
         &:first-child {
             border-top: none;
         }
-
-        &:last-child {
-            border-bottom: none;
-        }
     }
 
     h4, > li > a {
@@ -189,5 +185,11 @@ hr {
         &:hover {
             transform: translate(13px);
         }
+    }
+}
+
+.post-author {
+    img {
+        border-radius: 50%;
     }
 }

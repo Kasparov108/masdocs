@@ -80,8 +80,10 @@ function getListItem( href, text ) {
 
 ( function( $ ) {
 	'use strict';
-
-	// Smooth scroll
+    
+    $('[data-toggle="tooltip"]').tooltip();
+	
+    // Smooth scroll
 	// Select all links with hashes
 	$('#table-of-contents a[href*="#"]')
   		// Remove links that don't actually link to anything

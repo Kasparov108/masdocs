@@ -60,10 +60,13 @@ get_header(); ?>
 
                                 <footer class="entry-footer wedocs-entry-footer">
                                     <div class="post-meta">
-                                        <div class="wedocs-article-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                        <span class="wedocs-article-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
                                             <meta itemprop="name" content="<?php echo get_the_author(); ?>" />
                                             <meta itemprop="url" content="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" />
-                                        </div>
+                                            <span class="post-author" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo get_the_author(); ?>">
+                                                <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+                                            </span>
+                                        </span>
 
                                         <meta itemprop="datePublished" content="<?php echo get_the_time( 'c' ); ?>"/>
                                         <time itemprop="dateModified" datetime="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>"><?php printf( __( 'Updated on %s', 'wedocs' ), get_the_modified_date() ); ?></time>
