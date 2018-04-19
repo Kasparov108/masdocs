@@ -13,11 +13,11 @@
                     <?php endif; ?>
                 </h3>
 
-                <?php if ( $main_doc['sections'] ) : $topics = 0;?>
+                <?php if ( $main_doc['sections'] ) : ?>
 
                     <div class="inside">
                         <ul class="wedocs-doc-sections">
-                            <?php foreach ($main_doc['sections'] as $section) : $topics++; ?>
+                            <?php foreach ($main_doc['sections'] as $section) : ?>
                                 <li><a href="<?php echo get_permalink( $section->ID ); ?>"><?php echo $section->post_title; ?></a></li>
                             <?php endforeach; ?>
                         </ul>
@@ -25,7 +25,7 @@
 
                 <?php endif; ?>
                 
-                <?php if ( $topics > 4 ) : ?>
+                <?php if ( $total_topics > 4 ) : ?>
 
                 <div class="wedocs-doc-link">
                     <a data-text="<?php echo esc_attr( __( 'Show all topics', 'masdocs' ) ); ?>" data-toggled-text="<?php echo esc_attr( __( 'Show less topics', 'masdocs' ) ); ?>" href="<?php echo get_permalink( $main_doc['doc']->ID ); ?>"><?php echo esc_html__( 'Show all topics', 'masdocs' ); ?></a>
