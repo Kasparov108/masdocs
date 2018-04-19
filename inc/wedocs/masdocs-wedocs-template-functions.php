@@ -12,7 +12,8 @@ if ( ! function_exists( 'masdocs_list_docs_subcategories' ) ) {
 		$args = array(
 			'post_parent' => $post->ID,
 			'post_type'   => 'docs',
-			'order'       => 'menu_order',
+			'orderby'     => 'menu_order',
+            'order'       => 'ASC'
 		);
 
 		$children = get_children( $args );
@@ -20,7 +21,7 @@ if ( ! function_exists( 'masdocs_list_docs_subcategories' ) ) {
 		$output = '';
 
 		foreach( $children as $child ) {
-			$grand_children = get_children( array( 'post_parent' => $child->ID, 'post_type' => 'docs' ) );
+			$grand_children = get_children( array( 'post_parent' => $child->ID, 'post_type' => 'docs', 'orderby' => 'menu_order', 'order' => 'ASC' ) );
 			$grand_children_count = count( $grand_children );
 
 			$classes    = 'docs-subcategory-item';
