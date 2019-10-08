@@ -127,6 +127,7 @@ function masdocs_scripts() {
 	wp_enqueue_style( 'font-awesome-css', get_template_directory_uri() . '/assets/css/fontawesome-all.min.css' );
 	wp_enqueue_style( 'masdocs-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900' );
+	wp_enqueue_style( 'typekit-fonts', 'https://use.typekit.net/pde0vbv.css' );
 
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 	$suffix = '';
@@ -141,7 +142,7 @@ function masdocs_scripts() {
 	}
 }
 
-add_action( 'wp_enqueue_scripts', 'masdocs_scripts' );
+add_action( 'wp_enqueue_scripts', 'masdocs_scripts', 20 );
 
 /**
  * Implement the Custom Header feature.

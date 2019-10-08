@@ -11,6 +11,8 @@ anchors.options = {
 };
 anchors.add( '.wedocs-single-content .entry-content > h2, .wedocs-single-content .entry-content > h3, .wedocs-single-content .entry-content > h4');
 
+console.log( anchors );
+
 if ( anchors.elements.length > 0 ) {
 	generateTableOfContents( anchors.elements );
 }
