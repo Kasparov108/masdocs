@@ -6,15 +6,13 @@
 /**
  * Setup anchors for documents
  */
-anchors.options = {
-	placement: 'left'
-};
-anchors.add( '.wedocs-single-content .entry-content > h2, .wedocs-single-content .entry-content > h3, .wedocs-single-content .entry-content > h4');
 
-console.log( anchors );
-
-if ( anchors.elements.length > 0 ) {
-	generateTableOfContents( anchors.elements );
+anchors.remove( 'h2, h3, h4, h5, h6' );
+var newAnchors = new AnchorJS();
+newAnchors.add( '.wedocs-single-content .entry-content > h2, .wedocs-single-content .entry-content > h3, .wedocs-single-content .entry-content > h4, .wedocs-single-content .entry-content > h5, .wedocs-single-content .entry-content > h6' );
+console.log( newAnchors.elements );
+if ( newAnchors.elements.length > 0 ) {
+	generateTableOfContents( newAnchors.elements );
 }
 
 function generateTableOfContents( els ) {
@@ -48,7 +46,7 @@ function generateTableOfContents( els ) {
 		if ( curLevel > prevLevel ) {
 			if ( ! curr ) {
 				root = document.createElement( 'OL' );
-				root.appendChild( li ); 
+				root.appendChild( li );
 				root.classList.add( 'nav' );
                 root.classList.add( 'flex-column' );
 			} else {
@@ -83,9 +81,9 @@ function getListItem( href, text ) {
 
 ( function( $ ) {
 	'use strict';
-    
+
     $('[data-toggle="tooltip"]').tooltip();
-	
+
     // Smooth scroll
 	// Select all links with hashes
 	$('#table-of-contents a[href*="#"]')
@@ -102,7 +100,7 @@ function getListItem( href, text ) {
 			if (target.length) {
 				// Only prevent default if animation is actually gonna happen
 				event.preventDefault();
-				
+
 				$('html, body').animate({ scrollTop: target.offset().top }, 1000, function() {
 					// Callback after animation
 					// Must change focus!
@@ -129,10 +127,10 @@ function getListItem( href, text ) {
   	});
 
   	$( document ).on( 'click', '.wedocs-doc-link > a', function() {
-  		var $this = $( this ), 
+  		var $this = $( this ),
   			docsSections = $this.parent().parent().find( '.wedocs-doc-sections' ),
   			$docsSections = $( docsSections );
-  		
+
   		$docsSections.toggleClass( 'toggled' );
   		if ( $docsSections.hasClass( 'toggled' ) ) {
   			$this.text( $this.data( 'toggledText' ) );
