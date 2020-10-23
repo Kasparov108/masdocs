@@ -12,7 +12,7 @@
 <?php
     //get_search_form();
 
-    $walker = new WeDocs_Walker_Docs();
+    $walker = new WeDevs\WeDocs\Walker();
     $children = wp_list_pages( array(
         'title_li'  => '',
         'order'     => 'menu_order',
@@ -24,7 +24,7 @@
 
     <?php if ($children) { ?>
         <ul class="doc-nav-list">
-            <?php 
+            <?php
                 $front_page_id = get_option( 'page_on_front' );
                 wp_list_pages( array( 'title_li' => false, 'include' => $front_page_id ) ); ?>
             <?php echo $children; ?>
