@@ -1,4 +1,4 @@
-<?php if ( $docs ) : ?>
+<?php if ( $docs ) : wp_dequeue_style( 'wedocs-styles' ); ?>
 
 <div class="wedocs-shortcode-wrap">
     <ul class="wedocs-docs-list">
